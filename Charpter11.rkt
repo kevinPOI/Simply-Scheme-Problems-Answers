@@ -86,6 +86,26 @@
   (if (= (count wd) 1)
       (unspell-letter wd)
       (word (unspell-letter (first wd))(phone-unspell (bf wd)))))
-  
+#| 11.5  Write a procedure initials that takes a sentence as its argument and returns a sentence of the first letters in each of the sentence's words: 
+
+> (initials '(if i needed someone))
+(I I N S) |#
+
+(define (initials sent)
+  (if (= (count sent)0)
+      ()
+      (se (first (first sent))(initials (bf sent)))))
+#|11.6  Write a procedure countdown that works like this: 
+
+> (countdown 10)
+(10 9 8 7 6 5 4 3 2 1 BLASTOFF!)
+
+> (countdown 3)
+(3 2 1 BLASTOFF!)
+|#
+(define (countdown int)
+  (if (= 0 int)
+      'BLASTOFF!
+      (se int (countdown (- int 1)))))
       
  
