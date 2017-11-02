@@ -16,3 +16,7 @@
 ;argument: word/string
 (define (second x)
   (first (bf x)))
+;reverse the order of the word
+;argument:word
+(define (reverse_order wd)
+  (accumulate (lambda (x y)(word y x))wd))

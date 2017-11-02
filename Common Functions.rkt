@@ -1,4 +1,4 @@
-#|【Scheme Basic Functions by Kevin&poi~】|#
+#|【Scheme Common Functions by Kevin&poi~ on Github】|#
 
 ;function: ture if input is a vowel, false if not.
 ;argument: 1 character

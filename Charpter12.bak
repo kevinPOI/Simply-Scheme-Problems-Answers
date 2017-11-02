@@ -1,0 +1,72 @@
+#|【Scheme Basic Functions by Kevin&poi~】|#
+
+
+
+;function: ture if input is a vowel, false if not.
+
+;argument: 1 character
+
+(define (vowel? char)
+
+  (member? char '(a e i o u)))
+
+;square the number
+
+;argument: 1 number
+
+(define (square num)
+
+  (* num num))
+
+;cube the number
+
+;argument: 1 number
+
+(define (cube num)
+
+  (* num num num))
+
+;find the second word/character in a string/word
+
+;argument: word/string
+
+(define (second x)
+
+  (first (bf x)))
+
+;reverse the order of the word
+
+;argument:word
+;——————————————————————————————————————————practice problems————————————————————————————————————————————————————————————————
+(define (factorial x)
+   (if (<= x 1)
+       1
+       (* x(factorial (- x 1)))))
+(define (fib x)
+  (if (or (= x 1)(= x 2))
+      1
+      (+ (fib(- x 1)) (fib(- x 2)))))
+;———————————————————————————————————————————exercise problems———————————————————————————————————————————————————————————————
+#|12.1  Here is a definition of a procedure that returns the sum of the numbers in its argument sentence: 
+
+(define (addup nums)
+  (if (empty? (bf nums))
+      (first nums)
+      (+ (first nums) (addup (bf nums)))))
+Although this works, it could be simplified by changing the base case. Do that.|#
+  (define (addup nums)
+    (if (empty? nums)
+      0
+      (+ (first nums) (addup (bf nums)))))
+#|12.2  Fix the bug in the following definition: 
+
+(define (acronym sent)                       ;; wrong
+  (if (= (count sent) 1)
+      (first sent)
+      (word (first (first sent))
+	    (acronym (bf sent)))))|#
+(define (acronym sent)                       ;; wrong
+  (if (= (count sent) 1)
+      (first (first (sent)))
+      (word (first (first sent))
+	    (acronym (bf sent)))))
